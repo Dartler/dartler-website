@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung für Dartler Standalone</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            /* text-4xl */
+            font-weight: 700;
+            /* font-bold */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            /* text-3xl */
+            font-weight: 600;
+            /* font-semibold */
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            /* text-2xl */
+            font-weight: 600;
+            /* font-semibold */
+            margin-top: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .important {
+            font-weight: 600;
+            color: #dc2626;
+            /* text-red-600 */
+        }
+
+        .note {
+            background-color: #eff6ff;
+            /* bg-blue-50 */
+            border-left: 4px solid #3b82f6;
+            /* border-blue-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="p-4 sm:p-6 lg:p-8">
+    <div class="container rounded-xl">
+        <h1 class="mb-6">Datenschutzerklärung für Dartler Standalone</h1>
+
+        <p class="mb-4">Diese Datenschutzerklärung beschreibt, wie die App Dartler Standalone (die „App“) Informationen
+            behandelt.</p>
+
+        <h2>1. Welche Daten sammelt die App?</h2>
+        <p>Die App sammelt und speichert <strong class="important">ausschließlich lokal auf Ihrem Gerät</strong> die
+            folgenden Daten:</p>
+        <ul class="list-disc ml-6">
+            <li><strong>Spielerinformationen:</strong> Namen der von Ihnen angelegten Spieler.</li>
+            <li><strong>Spielstatistiken:</strong> Daten zu den von Ihnen gespielten Spielen, die den angelegten
+                Spielern zugeordnet sind.</li>
+        </ul>
+
+        <h2>2. Wie werden diese Daten gespeichert und verwendet?</h2>
+        <p>Alle oben genannten Daten werden <strong class="important">ausschließlich lokal in einer Datenbank auf Ihrem
+                Gerät</strong> gespeichert. Sie werden verwendet, um:</p>
+        <ul class="list-disc ml-6">
+            <li>Ihre Spielerprofile zu verwalten.</li>
+            <li>Ihre Spielstatistiken innerhalb der App anzuzeigen.</li>
+            <li>Es Ihnen zu ermöglichen, Statistiken aus anderen Apps zu importieren und in Ihre lokale Datenbank zu
+                integrieren.</li>
+        </ul>
+        <div class="note">
+            <p><strong class="important">Wichtig:</strong> Diese Daten werden <strong class="important">nicht</strong>
+                an uns oder Dritte übertragen, es sei denn, Sie nutzen die optionale Google Drive Backup-Funktion.</p>
+        </div>
+
+        <h2>3. Kontrolle über Ihre Daten</h2>
+        <p>Sie haben jederzeit die volle Kontrolle über Ihre Daten:</p>
+        <ul class="list-disc ml-6">
+            <li>Sie können Spieler und deren Statistiken innerhalb der App anzeigen und jederzeit löschen.</li>
+            <li>Sie können importierte Statistiken jederzeit löschen.</li>
+        </ul>
+
+        <h2>4. Optionale Google Drive Backup-Funktion</h2>
+        <p>Die App bietet eine <strong class="important">optionale</strong> Funktion zur Sicherung Ihrer
+            Spielstatistiken in Ihrem persönlichen Google Drive-Konto.</p>
+        <ul class="list-disc ml-6">
+            <li><strong>Wenn Sie diese Funktion nutzen:</strong>
+                <ul class="list-circle ml-6 mt-2">
+                    <li>Die App wird Sie um Ihre Zustimmung bitten, sich mit Ihrem Google-Konto anzumelden.</li>
+                    <li>Es wird die Google Drive API verwendet, um ein Cloud-Backup Ihrer lokalen Statistiken zu
+                        erstellen.</li>
+                    <li>Dieses Backup wird <strong class="important">ausschließlich im speziellen „App-Datenordner“
+                            Ihres persönlichen Google Drive-Kontos</strong> gespeichert, auf den nur diese App zugreifen
+                        kann. Es ist für andere Apps oder Benutzer nicht direkt sichtbar.</li>
+                    <li>Sie können dieses Backup jederzeit verwenden, um Ihre Statistiken in der App wiederherzustellen.
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Welche Daten werden gesichert?</strong> Es werden ausschließlich die in Abschnitt 1 genannten
+                Spielerinformationen und Spielstatistiken gesichert.</li>
+            <li><strong>Datenschutz bei Google Drive:</strong> Die Nutzung von Google Drive unterliegt den
+                Datenschutzbestimmungen von Google. Bitte lesen Sie die Datenschutzbestimmungen von Google für weitere
+                Informationen.</li>
+            <li><strong>Ihre Wahl:</strong> Die Nutzung dieser Funktion ist vollständig optional. Wenn Sie sie nicht
+                nutzen möchten, bleiben alle Ihre Daten ausschließlich auf Ihrem Gerät gespeichert.</li>
+        </ul>
+
+        <h2>5. Weitergabe von Daten an Dritte</h2>
+        <p>Dartler Standalone gibt <strong class="important">keine Ihrer persönlichen Daten an Dritte weiter</strong>,
+            es sei denn, Sie entscheiden sich aktiv für die Nutzung der Google Drive Backup-Funktion, wodurch die Daten
+            in Ihrem persönlichen Google Drive-Konto gespeichert werden (siehe Abschnitt 4).</p>
+
+        <h2>6. Änderungen dieser Datenschutzerklärung</h2>
+        <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Wir werden Sie über wesentliche
+            Änderungen informieren, indem wir die neue Datenschutzerklärung in der App und im Google Play Store
+            veröffentlichen. Wir empfehlen Ihnen, diese Datenschutzerklärung regelmäßig auf Änderungen zu überprüfen.
+        </p>
+
+        <h2>7. Kontakt</h2>
+        <p>Wenn Sie Fragen zu dieser Datenschutzerklärung haben, können Sie uns unter <a
+                href="mailto:[Ihre E-Mail-Adresse einfügen]" class="text-blue-600 hover:underline">[Ihre E-Mail-Adresse
+                einfügen]</a> kontaktieren.</p>
+    </div>
+</body>
+
+</html>
