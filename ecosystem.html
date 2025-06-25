@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dartler - Ecosystem Features & Pricing</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body class="antialiased">
+
+    <!-- Header -->
+    <header
+        class="fixed top-0 left-0 right-0 z-20 py-4 px-4 sm:px-6 lg:px-8 header-transparent transition-all duration-300">
+        <nav class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="./index.html" class="flex items-center">
+                    <img src="./assets/graphics/dartler_icon.svg" alt="Dartler Logo" class="text-white h-8 w-auto mr-3">
+                    <h1 class="text-3xl font-bold text-white">Dartler</h1>
+                </a>
+            </div>
+            <div class="flex items-center">
+                <a href="./index.html#dartler-app"
+                    class="text-white font-medium mx-4 hidden md:inline-block hover:text-gray-200"
+                    data-lang-key="nav_app">App</a>
+                <a href="#detailed-features"
+                    class="text-white font-medium mx-4 hidden md:inline-block hover:text-gray-200"
+                    data-lang-key="nav_features">Features</a>
+                <a href="#pricing" class="text-white font-medium mx-4 hidden md:inline-block hover:text-gray-200"
+                    data-lang-key="nav_pricing">Pricing</a>
+                <a href="#contact" class="text-white font-medium mx-4 hidden md:inline-block hover:text-gray-200"
+                    data-lang-key="nav_contact">Contact</a>
+
+                <!-- Language Switcher -->
+                <div class="flex items-center mx-4">
+                    <button id="lang-en"
+                        class="text-white font-medium px-2 py-1 rounded hover:bg-white hover:bg-opacity-20 transition-colors"
+                        onclick="switchLanguage('en')">EN</button>
+                    <span class="text-white mx-1">|</span>
+                    <button id="lang-de"
+                        class="text-white font-medium px-2 py-1 rounded hover:bg-white hover:bg-opacity-20 transition-colors"
+                        onclick="switchLanguage('de')">DE</button>
+                </div>
+
+                <a href="#" class="m3-button-filled text-sm" data-lang-key="nav_get_app">Get App</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="m3-top-app-bar text-white relative overflow-hidden pt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6" data-lang-key="ecosystem_page_title">
+                    Ecosystem Features & System Overview
+                </h1>
+                <p class="text-xl md:text-2xl max-w-4xl mx-auto text-indigo-100"
+                    data-lang-key="ecosystem_page_subtitle">
+                    Discover how Dartler's components work together to create the ultimate tournament experience
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- System Overview Section -->
+        <section id="system-overview" class="py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4" data-lang-key="system_overview_title">System
+                        Architecture</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="system_overview_subtitle">
+                        How Everything Works Together
+                    </p>
+                </div>
+
+                <div class="architecture-flow mb-16">
+                    <!-- Mobile App -->
+                    <div class="architecture-component">
+                        <div class="m3-card p-8 text-center">
+                            <div class="flex justify-center items-center h-24 w-24 mx-auto mb-4 rounded-full"
+                                style="background-color: var(--md-sys-color-primary-container);">
+                                <i class="fas fa-mobile-alt text-4xl"
+                                    style="color: var(--md-sys-color-on-primary-container);"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2" data-lang-key="architecture_app_title">Mobile App</h3>
+                            <p class="text-gray-600" data-lang-key="architecture_app_desc">
+                                Players score matches on their smartphones with intuitive touch controls
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="architecture-arrow">→</div>
+
+                    <!-- Central Server -->
+                    <div class="architecture-component">
+                        <div class="m3-card p-8 text-center">
+                            <div class="flex justify-center items-center h-24 w-24 mx-auto mb-4 rounded-full"
+                                style="background-color: var(--md-sys-color-tertiary-container);">
+                                <i class="fas fa-server text-4xl"
+                                    style="color: var(--md-sys-color-on-tertiary-container);"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2" data-lang-key="architecture_server_title">Central Server
+                            </h3>
+                            <p class="text-gray-600" data-lang-key="architecture_server_desc">
+                                Processes all game data, manages tournaments, and synchronizes real-time updates
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="architecture-arrow">→</div>
+
+                    <!-- Web Dashboard -->
+                    <div class="architecture-component">
+                        <div class="m3-card p-8 text-center">
+                            <div class="flex justify-center items-center h-24 w-24 mx-auto mb-4 rounded-full"
+                                style="background-color: var(--md-sys-color-secondary-container);">
+                                <i class="fas fa-desktop text-4xl"
+                                    style="color: var(--md-sys-color-on-secondary-container);"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2" data-lang-key="architecture_dashboard_title">Web
+                                Dashboard</h3>
+                            <p class="text-gray-600" data-lang-key="architecture_dashboard_desc">
+                                Tournament organizers manage brackets, view statistics, and display live results
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Flow Diagram -->
+                <div class="m3-card p-8">
+                    <div class="text-center">
+                        <img src="https://placehold.co/1200x400/ffffff/333333?text=System+Architecture+Diagram"
+                            alt="System Architecture Diagram" class="w-full max-w-4xl mx-auto rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Features Section -->
+        <section id="detailed-features" class="bg-white py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4" data-lang-key="detailed_features_title">Detailed
+                        Features</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="detailed_features_subtitle">
+                        Everything you need for professional darts tournaments
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Mobile App Features -->
+                    <div class="m3-card p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full"
+                                style="background-color: var(--md-sys-color-primary-container);">
+                                <i class="fas fa-mobile-alt text-xl"
+                                    style="color: var(--md-sys-color-on-primary-container);"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold ml-4" data-lang-key="app_features_title">Mobile App Features
+                            </h3>
+                        </div>
+                        <ul class="feature-list">
+                            <li data-lang-key="app_feature_scoring">Lightning-fast scoring interface</li>
+                            <li data-lang-key="app_feature_offline">Offline play capability</li>
+                            <li data-lang-key="app_feature_stats">Comprehensive statistics tracking</li>
+                            <li data-lang-key="app_feature_profiles">Player profile management</li>
+                            <li data-lang-key="app_feature_ai">Practice against DartBot AI</li>
+                            <li data-lang-key="app_feature_games">Multiple game variants (501, Cricket, etc.)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Server Features -->
+                    <div class="m3-card p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full"
+                                style="background-color: var(--md-sys-color-tertiary-container);">
+                                <i class="fas fa-server text-xl"
+                                    style="color: var(--md-sys-color-on-tertiary-container);"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold ml-4" data-lang-key="server_features_title">Server Features
+                            </h3>
+                        </div>
+                        <ul class="feature-list">
+                            <li data-lang-key="server_feature_realtime">Real-time data synchronization</li>
+                            <li data-lang-key="server_feature_tournaments">Tournament bracket management</li>
+                            <li data-lang-key="server_feature_players">Player registration system</li>
+                            <li data-lang-key="server_feature_api">RESTful API for integrations</li>
+                            <li data-lang-key="server_feature_backup">Automatic data backup</li>
+                            <li data-lang-key="server_feature_scalable">Scalable architecture</li>
+                        </ul>
+                    </div>
+
+                    <!-- Dashboard Features -->
+                    <div class="m3-card p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full"
+                                style="background-color: var(--md-sys-color-secondary-container);">
+                                <i class="fas fa-desktop text-xl"
+                                    style="color: var(--md-sys-color-on-secondary-container);"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold ml-4" data-lang-key="dashboard_features_title">Dashboard
+                                Features</h3>
+                        </div>
+                        <ul class="feature-list">
+                            <li data-lang-key="dashboard_feature_live">Live tournament visualization</li>
+                            <li data-lang-key="dashboard_feature_brackets">Interactive bracket management</li>
+                            <li data-lang-key="dashboard_feature_leaderboards">Real-time leaderboards</li>
+                            <li data-lang-key="dashboard_feature_analytics">Advanced analytics & reports</li>
+                            <li data-lang-key="dashboard_feature_display">Big screen display mode</li>
+                            <li data-lang-key="dashboard_feature_export">Data export capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4" data-lang-key="pricing_title">Simple, Transparent
+                        Pricing</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="pricing_subtitle">
+                        Choose the plan that fits your needs
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Free Plan -->
+                    <div class="pricing-card">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2" data-lang-key="pricing_free_title">Free
+                            </h3>
+                            <p class="text-gray-600 mb-6" data-lang-key="pricing_free_subtitle">Perfect for casual
+                                players</p>
+                            <div class="mb-6">
+                                <span class="text-4xl font-bold" style="color: var(--md-sys-color-primary);"
+                                    data-lang-key="pricing_free_price">$0</span>
+                                <span class="text-gray-600 ml-2" data-lang-key="pricing_free_period">forever</span>
+                            </div>
+                            <ul class="feature-list text-left mb-8">
+                                <li data-lang-key="pricing_free_feature_1">Dartler App with full features</li>
+                                <li data-lang-key="pricing_free_feature_2">Unlimited offline games</li>
+                                <li data-lang-key="pricing_free_feature_3">Basic statistics tracking</li>
+                                <li data-lang-key="pricing_free_feature_4">Play against DartBot AI</li>
+                                <li class="unavailable">Server hosting</li>
+                                <li class="unavailable">Tournament dashboard</li>
+                            </ul>
+                            <a href="#" class="m3-button-filled w-full" data-lang-key="pricing_free_button">Download
+                                Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Professional Plan -->
+                    <div class="pricing-card featured">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2" data-lang-key="pricing_pro_title">
+                                Professional</h3>
+                            <p class="text-gray-600 mb-6" data-lang-key="pricing_pro_subtitle">For serious tournament
+                                organizers</p>
+                            <div class="mb-6">
+                                <span class="text-4xl font-bold" style="color: var(--md-sys-color-primary);"
+                                    data-lang-key="pricing_pro_price">$29</span>
+                                <span class="text-gray-600 ml-2" data-lang-key="pricing_pro_period">per month</span>
+                            </div>
+                            <ul class="feature-list text-left mb-8">
+                                <li data-lang-key="pricing_pro_feature_1">Everything in Free</li>
+                                <li data-lang-key="pricing_pro_feature_2">Dartler Server hosting</li>
+                                <li data-lang-key="pricing_pro_feature_3">Tournament Dashboard</li>
+                                <li data-lang-key="pricing_pro_feature_4">Up to 100 concurrent players</li>
+                                <li data-lang-key="pricing_pro_feature_5">Advanced analytics</li>
+                                <li data-lang-key="pricing_pro_feature_6">Email support</li>
+                            </ul>
+                            <a href="#contact" class="m3-button-filled w-full" data-lang-key="pricing_pro_button">Start
+                                Free Trial</a>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="pricing-card">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2" data-lang-key="pricing_enterprise_title">
+                                Enterprise</h3>
+                            <p class="text-gray-600 mb-6" data-lang-key="pricing_enterprise_subtitle">For large
+                                organizations</p>
+                            <div class="mb-6">
+                                <span class="text-4xl font-bold" style="color: var(--md-sys-color-primary);"
+                                    data-lang-key="pricing_enterprise_price">Custom</span>
+                                <span class="text-gray-600 ml-2"
+                                    data-lang-key="pricing_enterprise_period">pricing</span>
+                            </div>
+                            <ul class="feature-list text-left mb-8">
+                                <li data-lang-key="pricing_enterprise_feature_1">Everything in Professional</li>
+                                <li data-lang-key="pricing_enterprise_feature_2">Unlimited players</li>
+                                <li data-lang-key="pricing_enterprise_feature_3">Custom integrations</li>
+                                <li data-lang-key="pricing_enterprise_feature_4">Dedicated support</li>
+                                <li data-lang-key="pricing_enterprise_feature_5">On-premise deployment</li>
+                                <li data-lang-key="pricing_enterprise_feature_6">SLA guarantees</li>
+                            </ul>
+                            <a href="#contact" class="m3-button-outlined w-full"
+                                data-lang-key="pricing_enterprise_button">Contact Sales</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4" data-lang-key="contact_title">Get in Touch</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="contact_subtitle">
+                        Have questions? We'd love to hear from you.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <!-- Contact Form -->
+                    <div class="m3-card p-8">
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2"
+                                    data-lang-key="contact_name">Name</label>
+                                <input type="text" id="name" name="name" required class="form-input">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2"
+                                    data-lang-key="contact_email">Email</label>
+                                <input type="email" id="email" name="email" required class="form-input">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2"
+                                    data-lang-key="contact_subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required class="form-input">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2"
+                                    data-lang-key="contact_message">Message</label>
+                                <textarea id="message" name="message" required class="form-textarea"></textarea>
+                            </div>
+                            <button type="submit" class="m3-button-filled w-full" data-lang-key="contact_send">Send
+                                Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="m3-card p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6" data-lang-key="contact_info_title">Contact
+                            Information</h3>
+                        <p class="text-gray-600 mb-8" data-lang-key="contact_info_subtitle">Get in touch with our team
+                        </p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full"
+                                    style="background-color: var(--md-sys-color-primary-container);">
+                                    <i class="fas fa-envelope text-xl"
+                                        style="color: var(--md-sys-color-on-primary-container);"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold" data-lang-key="contact_email_label">Email</h4>
+                                    <p class="text-gray-600">contact@dartler.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full"
+                                    style="background-color: var(--md-sys-color-secondary-container);">
+                                    <i class="fas fa-phone text-xl"
+                                        style="color: var(--md-sys-color-on-secondary-container);"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold" data-lang-key="contact_phone_label">Phone</h4>
+                                    <p class="text-gray-600">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full"
+                                    style="background-color: var(--md-sys-color-tertiary-container);">
+                                    <i class="fas fa-map-marker-alt text-xl"
+                                        style="color: var(--md-sys-color-on-tertiary-container);"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold" data-lang-key="contact_address_label">Address</h4>
+                                    <p class="text-gray-600">123 Darts Street<br>Tournament City, TC 12345</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="mt-8 pt-8 border-t border-gray-200">
+                            <div class="flex justify-center space-x-6 text-2xl">
+                                <a href="#" class="social-icon transition-colors"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon transition-colors"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="social-icon transition-colors"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon transition-colors"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-3xl font-bold mb-2" data-lang-key="footer_title">Ready to Throw?</h3>
+            <p class="text-indigo-200 max-w-xl mx-auto mb-8" data-lang-key="footer_subtitle">Download the Dartler app
+                today and rediscover your passion for darts.</p>
+            <div class="flex justify-center items-center space-x-4 mb-12">
+                <a href="#" class="m3-button-filled">
+                    <i class="fab fa-apple mr-2"></i> <span data-lang-key="footer_app_store">App Store</span>
+                </a>
+                <a href="#" class="m3-button-filled"
+                    style="background-color: var(--md-sys-color-secondary); color: var(--md-sys-color-on-secondary)">
+                    <i class="fab fa-google-play mr-2"></i> <span data-lang-key="footer_google_play">Google Play</span>
+                </a>
+            </div>
+            <div class="flex justify-center space-x-6 text-2xl mb-8">
+                <a href="#" class="social-icon transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon transition-colors"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-gray-400" data-lang-key="footer_copyright">&copy; 2025 Dartler. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Include JavaScript -->
+    <script src="./assets/js/main.js"></script>
+
+</body>
+
+</html>
