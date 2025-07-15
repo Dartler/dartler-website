@@ -148,12 +148,20 @@ function handleHeaderScroll() {
     if (!header) return;
 
     if (window.scrollY > 50) {
-        header.classList.remove('header-transparent');
-        header.classList.add('header-solid');
+        header.classList.remove('bg-transparent');
+        header.classList.add('bg-slate-900');
     } else {
-        header.classList.remove('header-solid');
-        header.classList.add('header-transparent');
+        header.classList.remove('bg-slate-900');
+        header.classList.add('bg-transparent');
     }
+}
+
+function initializeHeaderScroll() {
+    // Add initial class based on scroll position
+    handleHeaderScroll();
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleHeaderScroll);
 }
 
 // Smooth scrolling for anchor links
@@ -172,13 +180,97 @@ function initializeSmoothScrolling() {
     });
 }
 
+// Mobile menu functionality
+function initializeMobileMenu() {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const menuLinks = document.querySelectorAll('.menu-link');
+
+    // Open menu
+    function openMenu() {
+        mobileMenu.classList.add('menu-open');
+        menuOverlay.classList.add('show');
+        document.body.classList.add('menu-open');
+    }
+
+    // Close menu
+    function closeMenu() {
+        mobileMenu.classList.remove('menu-open');
+        menuOverlay.classList.remove('show');
+        document.body.classList.remove('menu-open');
+    }
+
+    // Event listeners
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', openMenu);
+    }
+
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', closeMenu);
+    }
+
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', closeMenu);
+    }
+
+    // Close menu when clicking on menu links
+    menuLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('menu-open')) {
+            closeMenu();
+        }
+    });
+
+    // Update mobile language buttons when language changes
+    function updateMobileLanguageButtons() {
+        const mobileLangEn = document.getElementById('mobile-lang-en');
+        const mobileLangDe = document.getElementById('mobile-lang-de');
+
+        if (mobileLangEn && mobileLangDe) {
+            // Remove active class from both
+            mobileLangEn.classList.remove('active');
+            mobileLangDe.classList.remove('active');
+
+            // Add active class to current language
+            if (currentLanguage === 'en') {
+                mobileLangEn.classList.add('active');
+            } else if (currentLanguage === 'de') {
+                mobileLangDe.classList.add('active');
+            }
+        }
+    }
+
+    // Call this function initially and whenever language changes
+    updateMobileLanguageButtons();
+
+    // Override the switchLanguage function to also update mobile buttons
+    const originalSwitchLanguage = window.switchLanguage;
+    window.switchLanguage = function (lang) {
+        originalSwitchLanguage(lang);
+        updateMobileLanguageButtons();
+        // Close mobile menu after language switch
+        closeMenu();
+    };
+}
+
 // Initialize everything when DOM loads
 document.addEventListener('DOMContentLoaded', function () {
     initializeLanguage();
+    initializeHeaderScroll();
     initializeSmoothScrolling();
 
-    // Add scroll listener for header effect
-    window.addEventListener('scroll', handleHeaderScroll);
+    // Initialize mobile menu component
+    if (typeof initializeMobileMenuComponent === 'function') {
+        initializeMobileMenuComponent();
+    }
+
+    initializeMobileMenu(); // Add mobile menu initialization
 
     // Add contact form listener if it exists
     const contactForm = document.getElementById('contact-form');
